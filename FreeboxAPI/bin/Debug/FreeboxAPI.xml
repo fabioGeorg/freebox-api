@@ -1,0 +1,3982 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FreeboxAPI</name>
+    </assembly>
+    <members>
+        <member name="T:FreeboxAPI.AirMediaAPI.Actions">
+            <summary>
+            Actions
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.Actions.start">
+            <summary>
+            Start playing a media.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.Actions.stop">
+            <summary>
+            Stop playing a media.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.AirMediaAPI.AirMediaConfig">
+            <summary>
+            AirMediaConfig
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.AirMediaAPI.AirMediaConfig.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.AirMediaAPI.AirMediaConfig.#ctor(System.Boolean,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="enabled"></param>
+            <param name="password"></param>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaConfig.Enabled">
+            <summary>
+            Enable/Disable the airmedia server.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaConfig.Password">
+            <summary>
+            If not empty, the client will have to enter a password to be able to use this airmedia server.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.AirMediaAPI.AirMediaErrors">
+            <summary>
+            AirMediaErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.unknown_target">
+            <summary>
+            No airmedia device with this name in range.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_client">
+            <summary>
+            No airmedia client connected.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.set_pass">
+            <summary>
+            Unable to update password.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.set_onscreen_code">
+            <summary>
+            Unable to activate onscreen code.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_ctrl">
+            <summary>
+            Remote control is unavailable.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.http">
+            <summary>
+            Internal HTTP error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.bad_session">
+            <summary>
+            No stream session found.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.bad_name">
+            <summary>
+            Invalid airmedia name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.bad_device_id">
+            <summary>
+            No device with this id.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.bad_remote_id">
+            <summary>
+            No remote control with this id.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.req_in_progress">
+            <summary>
+            You should try again, another request is still processing.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.fetch">
+            <summary>
+            Unable to get slideshow information.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_display">
+            <summary>
+            No screen available.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.playback_state">
+            <summary>
+            Invalid playback state.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_slideshow_srv">
+            <summary>
+            Slideshow is not supported.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_mem">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.inout_file">
+            <summary>
+            Unable to read input file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.no_volume_control">
+            <summary>
+            Volume control is not available.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.connect">
+            <summary>
+            Error connecting to the airmedia device.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.unauthorized">
+            <summary>
+            This device requests a password.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.unsupported_media">
+            <summary>
+            The device does not support this format.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.bad_type">
+            <summary>
+            Invalid file type.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.AirMediaAPI.AirMediaErrors.unimplemented">
+            <summary>
+            Unimplemented.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.AirMediaAPI.AirMediaReceiver">
+            <summary>
+            AirMediaReceiver
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.AirMediaAPI.AirMediaReceiver.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiver.Name">
+            <summary>
+            AirMedia name.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiver.PasswordProtected">
+            <summary>
+            If set to true the receiver is protected by a password.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiver.Capabilities">
+            <summary>
+            List of receiver capabilities from the following list:
+            photo: can display photos
+            audio: can play audio files
+            video: can play video files
+            screen: can display remote screen
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest">
+            <summary>
+            AirMediaReceiverRequest
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest.Action">
+            <summary>
+            Start/Stop playing a media.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest.MediaType">
+            <summary>
+            Media type
+            photo: display a photo
+            video: display a video
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest.Password">
+            <summary>
+            Optional receiver password.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest.Position">
+            <summary>
+            Start position for a video.
+            The start position is expressed in percent * 1000, for instance 50 000 means 50% of the video.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.AirMediaAPI.AirMediaReceiverRequest.Media">
+            <summary>
+            The media to play.
+            For video media, you have to specify the media URL (end with .mov or .mp4, etc)
+            For photo media, you have to specify the file path on the Freebox Server (base64 encoded
+            as returned in fs/ls call).
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.APIResponse">
+            <summary>
+            APIResponse
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.API.APIResponse.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.API.APIResponse.#ctor(System.Boolean,System.Object,System.String,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="success">Is the request a success.</param>
+            <param name="result">Result of the request.</param>
+            <param name="error">If not success, error code.</param>
+            <param name="msg">Error msg.</param>
+        </member>
+        <member name="P:FreeboxAPI.API.APIResponse.Success">
+            <summary>
+            Indicates if the request was successful.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.APIResponse.Result">
+            <summary>
+            The result of the request. 
+            (It may be omitted if the request does not expect any result)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.APIResponse.ErrorCode">
+            <summary>
+            In case of request error, this ErrorCode provides information about the error.
+            The possible ErrorCode values are documented for each API.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.APIResponse.Msg">
+            <summary>
+            In case of error, provides a French error message relative to the error.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.AppPermission">
+            <summary>
+            App permission
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Settings">
+            <summary>
+            Allow modifying the Freebox settings (reading settings is always allowed).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Contacts">
+            <summary>
+            Access to contact list.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Calls">
+            <summary>
+            Access to call logs.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Explorer">
+            <summary>
+            Access to filesystem.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Downloader">
+            <summary>
+            Access to downloader.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.Parental">
+            <summary>
+            Access to parental control.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.AppPermission.PVR">
+            <summary>
+            Access personal video recorder. (Not yet supported)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints">
+            <summary>
+            Contains all the APIEndpoints URL.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.BaseURL">
+            <summary>
+            API base URL
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.GetAPIVersion">
+            <summary>
+            Get the API version.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints">
+            <summary>
+            ParentalAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.GetParentalFilterConfig">
+            <summary>
+            Get the <c>ParentalFilterConfig</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.UpdateParentalFilterConfig">
+            <summary>
+            Update the <c>ParentalFilterConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.GetAllParentalFilterRules">
+            <summary>
+            Returns the collection of all <c>ParentalFilter</c> rules.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.GetParentalFilterRuleByID">
+            <summary>
+            Returns the <c>ParentalFilter</c> rule with the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.DeleteParentalFilterRuleByID">
+            <summary>
+            Deletes the <c>ParentalFilter</c> rule with the given ID.
+            Method: DELETE
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.UpdateParentalFilterRuleByID">
+            <summary>
+            Updates the <c>ParentalFilter</c> rule with the given ID.
+            Method: PUT
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.AddParentalFilterRule">
+            <summary>
+            Add a parental filter rule.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.GetParentalFilterPlanningByID">
+            <summary>
+            Returns the <c>ParentalFilterPlanning</c> for the filter with the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID}
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ParentalEndpoints.UpdateParentalFilterPlanningByID">
+            <summary>
+            Update the <c>ParentalFilterPlanning</c> for the parental filter rule with the given ID.
+            Method: PUT
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints">
+            <summary>
+            CallAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.GetListCalls">
+            <summary>
+            Returns the collection of all <c>CallEntry</c> call entry.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.DeleteAllCalls">
+            <summary>
+            Remove all <c>CallEntry</c> call entries.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.MarkAllCallsAsRead">
+            <summary>
+            Mark all <c>CallEntry</c> call entries as read.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.GetCallByID">
+            <summary>
+            Returns the <c>CallEntry</c> task with the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.DeleteCallByID">
+            <summary>
+            Deletes the <c>CallEntry</c> with the given ID.
+            Method: DELETE
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.CallEndpoints.UpdateCallByID">
+            <summary>
+            Updates the <c>CallEntry</c> task with the given ID.
+            Method: PUT
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.AirMediaEndpoints">
+            <summary>
+            AirMediaAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.AirMediaEndpoints.GetAirMediaConfig">
+            <summary>
+            Returns the current <c>AirMediaConfig</c>.
+            Method: GET
+            Param: none           
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.AirMediaEndpoints.UpdateAirMediaConfig">
+            <summary>
+            Update the current <c>AirMediaConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.AirMediaEndpoints.GetAllAirMediaReceivers">
+            <summary>
+            Get the list of <c>AirMediaReceiver</c> connected to the Freebox Server.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.AirMediaEndpoints.SendAirMediaRequestByReceiverName">
+            <summary>
+            Send a new request to an <c>AirMediaReceiver</c>.
+            Method: POST
+            Param: ReceiverName (replace {receiver_name} with the ReceiverName)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints">
+            <summary>
+            ConnectionAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetConnectionStatus">
+            <summary>
+            Returns the current <c>ConnectionStatus</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetConnectionConfig">
+            <summary>
+            Returns the current <c>ConnectionConfiguration</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.UpdateConnectionConfig">
+            <summary>
+            Updates the <c>ConnectionConfiguration</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetIPv6ConnectionConfig">
+            <summary>
+            Returns the current <c>ConnectionIPv6Configuration</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.UpdateIPv6ConnectionConfig">
+            <summary>
+            Updates the <c>ConnectionIPv6Configuration</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetxDSLInfos">
+            <summary>
+            Returns the current <c>xDSLInfos</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetFTTHStatus">
+            <summary>
+            Returns the current <c>FTTHStatus</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetDDNSStatus">
+            <summary>
+            Returns the current <c>DDNSStatus</c>.
+            Method: GET
+            Param: Provider (replace {provider} with the Provider)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.GetDDNSConfig">
+            <summary>
+            Returns the current <c>DDNSConfig</c>.
+            Method: GET
+            Param: Provider (replace {provider} with the Provider)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ConnectionEndpoints.SetDDNSConfig">
+            <summary>
+            Set the <c>DDNSConfig</c>.
+            Method: PUT
+            Param: Provider (replace {provider} with the Provider)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.FreeplugEndpoints">
+            <summary>
+            FreeplugAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.FreeplugEndpoints.GetFreeplugs">
+            <summary>
+            Returns the list of <c>FreeplugNetwork</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.FreeplugEndpoints.GetFreeplugByID">
+            <summary>
+            Returns the information of a <c>Freeplug</c>.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.FreeplugEndpoints.ResetFreeplugByID">
+            <summary>
+            Reset the given <c>Freeplug</c>.
+            Method: POST
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.LCDEndpoints">
+            <summary>
+            LcdAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LCDEndpoints.GetLCDConfig">
+            <summary>
+            Get the <c>LcdConfig</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LCDEndpoints.UpdateLCDConfig">
+            <summary>
+            Update the <c>LcdConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.UPnPAVEndpoints">
+            <summary>
+            UPnPAVAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.UPnPAVEndpoints.GetUPnPAVConfig">
+            <summary>
+            Get the <c>UPnPAVConfig</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.UPnPAVEndpoints.UpdateUPnPAVConfig">
+            <summary>
+            Update the <c>UPnPAVConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.NetworkShareEndpoints">
+            <summary>
+            NetworkShareAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.NetworkShareEndpoints.GetSambaConfig">
+            <summary>
+            Get the <c>SambaConfig</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.NetworkShareEndpoints.UpdateSambaConfig">
+            <summary>
+            Update the <c>SambaConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.NetworkShareEndpoints.GetAFPConfig">
+            <summary>
+            Get the <c>AFPConfig</c>.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.NetworkShareEndpoints.UpdateAFPConfig">
+            <summary>
+            Update the <c>AFPConfig</c>.
+            Method: PUT
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints.RequestAuthorization">
+            <summary>
+            Request authorization.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints.GetAuthorizationProgressByID">
+            <summary>
+            Get the authorization progress of the given ID.
+            Method: GET
+            Param: TrackID (replace {track_id} with the TrackID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints.GetChallengeValue">
+            <summary>
+            Get challenge value.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints.OpenSession">
+            <summary>
+            Open a session.
+            Method: POST, GET (depends the API used)
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.LoginEndpoints.CloseSession">
+            <summary>
+            Close the session.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints">
+            <summary>
+            ContactAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.GetListContacts">
+            <summary>
+            Returns the collection of all <c>ContactEntry</c>.
+            Method: GET
+            Param: Not yet implemented. none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.GetContactByID">
+            <summary>
+            Returns the <c>ContactEntry</c> with the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.CreateContact">
+            <summary>
+            Creates a new <c>ContactEntry</c>.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.DeleteContactByID">
+            <summary>
+            Deletes the <c>ContactEntry</c> with the given ID.
+            Method: DELETE
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.UpdateContactByID">
+            <summary>
+            Updates the <c>ContactEntry</c> with the given ID.
+            Method: PUT
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.GetListByContactID">
+            <summary>
+            Returns the collection corresponding the info choosed for a given contactID.
+            Method: GET
+            Param: ID, Info (replace {id} with the ID and {info} with the contact info)
+            </summary>
+            <see cref="T:FreeboxAPI.ContactAPI.ContactInfo"/>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.GetContactInfoByID">
+            <summary>
+            Returns the corresponding info choosed for a given contactID
+            Method: GET
+            Param: ID, Info (replace {id} with the ID and {info} with the contact info)
+            </summary>
+            <see cref="T:FreeboxAPI.ContactAPI.ContactInfo"/>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.CreateContactInfo">
+            <summary>
+            Create the contact info.
+            Method: POST
+            Param: Info (replace {info} with the Info)          
+            </summary>
+            <see cref="T:FreeboxAPI.ContactAPI.ContactInfo"/>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.DeleteContactInfoByID">
+            <summary>
+            Deletes the corresponding Info with the given ID.
+            Method: DELETE
+            Param: Info, ID (replace {info} with the Info and {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.ContactEndpoints.UpdateContactInfoByID">
+            <summary>
+            Updates the corresponding Info with the given ID.
+            Method: PUT
+            Param: Info, ID (replace {info} with the Info and {id} with the ID)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints">
+            <summary>
+            DownloadAPI
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadTask">
+            <summary>
+            Returns the collection of all <c>Download</c> tasks.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadTaskByID">
+            <summary>
+            Returns the <c>Download</c> task with the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.DeleteDownloadTaskByID">
+            <summary>
+            Deletes the <c>Download</c> task with the given ID, without erasing the downloaded files if task failed or stopped.
+            Method: DELETE
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.DeleteDownloadTaskAndFileByID">
+            <summary>
+            Same as <c>DeleteDownloadTaskByID</c> but erases the downloaded files.
+            Method: DELETE
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.UpdateDownloadTaskByID">
+            <summary>
+            Updates the <c>Download</c> task with the given ID.
+            Method: PUT
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadLogByID">
+            <summary>
+            Get download log of the given ID.
+            Method: GET
+            Param: ID (replace {id} with the ID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.AddDownload">
+            <summary>
+            Can be used to add URLs (scheme: 'http://', 'ftp://', 'magnet:') or file ('.torrent', '.nzb')
+            Method: POST
+            Param: More info on https://dev.freebox.fr/sdk/os/download/#
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadStats">
+            <summary>
+            Get the download statistics.
+            Method: GET
+            Param: none
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadListFilesByTaskID">
+            <summary>
+            Get the list of files for a given <c>Download</c>.
+            Method: GET
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.SetDownloadFilePriorityByTaskID">
+            <summary>
+            Change the priority of a <c>Download</c> file.
+            Method: PUT
+            Param: TaskID, FileID (replace {task_id} with the TaskID and {file_id} with the FileID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadTrackersListByTaskID">
+            <summary>
+            Get the list of trackers for a given <c>Download</c>.
+            Method: GET
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+            <remarks>
+            Attempting to call this method on a download other than bittorent will fail.
+            </remarks>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.AddDownloadTrackerByTaskID">
+            <summary>
+            Add a new tracker on a <c>Download</c>
+            Method: POST
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.DeleteDownloadTrackerByTaskID">
+            <summary>
+            Remove a tracker from a given <c>Download</c>.
+            Method: DELETE
+            Param: TaskID, Announce (replace {task_id} with the TaskID and {announce} with the Announce)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.UpdateDownloadTrackerByTaskID">
+            <summary>
+            Update a tracker from a given <c>Download</c>.
+            Method: PUT
+            Param: TaskID, Announce (replace {task_id} with the TaskID and {announce} with the Announce)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadPeersByTaskID">
+            <summary>
+            Get the list of peers for a given <c>Download</c>.
+            Method: GET
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+            <remarks>
+            Attempting to call this method on a download other than bittorent will fail.
+            </remarks>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadPiecesByTaskID">
+            <summary>
+            Get the pieces status for a given <c>Download</c>.
+            Method: GET
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.GetDownloadBlacklistByTaskID">
+             <summary>
+             Get the blacklist entries for a given download.
+             Method: GET
+             Param: TaskID (replace {task_id} with the TaskID)
+             </summary>
+            <remarks>
+            Attempting to call this method on a download other than bittorent will fail.
+             </remarks> 
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.DeleteAllDownloadBlacklistByTaskID">
+            <summary>
+            Delete all the blacklist for a downloadID.
+            Method: DELETE
+            Param: TaskID (replace {task_id} with the TaskID)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.DeleteDownloadBlacklistByTaskID">
+            <summary>
+            Delet a particular blacklist entry.
+            Method: DELETE
+            Param: Host (replace {host} with the Host)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.API.Endpoints.APIEndpoints.DownloadEndpoints.AddDownloadBlacklist">
+            <summary>
+            Add a blacklist entry.
+            Method: POST
+            Param: none
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.CallAPI.CallEntry">
+            <summary>
+            CallEntry
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.CallAPI.CallEntry.#ctor(System.Int32,FreeboxAPI.CallAPI.CallTypes,System.DateTime,System.String,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Paramer constructor.
+            </summary>
+            <param name="id"></param>
+            <param name="callType"></param>
+            <param name="dateTime"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+            <param name="duration"></param>
+            <param name="new"></param>
+            <param name="contactID"></param>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.ID">
+            <summary>
+            Call ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.CallType">
+            <summary>
+            Call type.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.DateTime">
+            <summary>
+            Call creation timestamp.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.Number">
+            <summary>
+            Callee number for outgoing calls. Caller number for incoming calls.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.Name">
+            <summary>
+            Callee name for outgoing calls. Caller name for incoming calls.
+            For incoming call if the network does not provide a contact name, we try to use the contact database to find a suitable name.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.Duration">
+            <summary>
+            Call duration in seconds.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.New">
+            <summary>
+            Call entry as not been acknowledged yet.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.CallAPI.CallEntry.ContactID">
+            <summary>
+            If the number matches an entry in the contact database, the id of the matching contact.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.CallAPI.CallTypes">
+            <summary>
+            Call types.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.CallAPI.CallTypes.missed">
+            <summary>
+            Missed incoming call.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.CallAPI.CallTypes.accepted">
+            <summary>
+            Incoming call.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.CallAPI.CallTypes.outgoing">
+            <summary>
+            Outgoing call.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration">
+            <summary>
+            ConnectionConfiguration
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.Ping">
+            <summary>
+            Should the Freebox respond to external ping requests.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.IsSecurePass">
+            <summary>
+            Is the admin password secure enough to enable remote access.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.RemoteAccess">
+            <summary>
+            Enable/disable HTTP remote access.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.RemoteAccessPort">
+            <summary>
+            Port number to use for remote HTTP access.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.RemoteAccessMinPort">
+            <summary>
+            This field indicate the minimum possible value for RemoteAccessPort.
+            </summary>
+            <see cref="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus"/> IPv4PortRange.
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.RemoteAccessMaxPort">
+            <summary>
+            This field indicate the maximum possible value for RemoteAccessPort.
+            </summary>
+            <see cref="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus"/> IPv4PortRange.
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.RemoteAccessIP">
+            <summary>
+            IPv4 to use for remote access (can be missing if connection is down).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.APIRemoteAccess">
+            <summary>
+            Is remote access enabled for apps, or share link.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.WOL">
+            <summary>
+            Enable/Disable Wake-on-lan proxy.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.Adblock">
+            <summary>
+            Is ads blocking feature enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.AdblockNotSet">
+            <summary>
+            If set tot true adblock setting has never been set by the user.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionConfiguration.AllowTokenRequest">
+            <summary>
+            If false, user has disabled new token request. New apps can't request a new token.
+            Apps that already have a token are still allowed.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionIPv6Configuration">
+            <summary>
+            ConnectionIPv6Configuration
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionIPv6Configuration.IPv6Enabled">
+            <summary>
+            Is IPv6 enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionIPv6Configuration.IPv6ll">
+            <summary>
+            Freebox IPv6 link local address.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionIPv6Configuration.Delegations">
+            <summary>
+            List of IPv6 delegations (List length: 8)
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnetionIPv6Delegation">
+            <summary>
+            ConnectionIPv6Delegation
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnetionIPv6Delegation.Prefix">
+            <summary>
+            IPv6 prefix.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnetionIPv6Delegation.NextHop">
+            <summary>
+            The next hop for the prefix.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSConfig">
+            <summary>
+            DDNSConfig
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSConfig.Hostname">
+            <summary>
+            DNS name to use to register.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSConfig.User">
+            <summary>
+            Username to use to register.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSConfig.Password">
+            <summary>
+            Password to use to register.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus">
+            <summary>
+            DDNSStatus
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus.NextRefresh">
+            <summary>
+            Next refresh timestamp.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus.LastRefresh">
+            <summary>
+            Last refresh timestamp.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus.NextRetry">
+            <summary>
+            Next retry timestamp.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DDNSStatus.LastError">
+            <summary>
+            Last error timestamp.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus">
+            <summary>
+            DynDnsProviderStatus
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.disabled">
+            <summary>
+            Disabled.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.ok">
+            <summary>
+            OK.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.wait">
+            <summary>
+            Updating.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.reqfail">
+            <summary>
+            Request failed.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.authfail">
+            <summary>
+            Authentication error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.nocredential">
+            <summary>
+            Invalid credential.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.ipinval">
+            <summary>
+            Invalid IP.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.hostinval">
+            <summary>
+            Invalid hostname.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.abuse">
+            <summary>
+            Blocked because of abuse.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.dnserror">
+            <summary>
+            DNS error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.unavailable">
+            <summary>
+            Service unavailable.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.nowan">
+            <summary>
+            Unable to get wan IP.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.DynDnsProviderStatus.unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors">
+            <summary>
+            ConnectionErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.inval">
+            <summary>
+            Invalid request.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.nodev">
+            <summary>
+            No device found with this name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.noent">
+            <summary>
+            No entity found with this name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.netdown">
+            <summary>
+            Network is down.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.busy">
+            <summary>
+            Device is busy.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.invalid_port">
+            <summary>
+            Invalid port.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.insecure_password">
+            <summary>
+            The password is too weak to enable remote access.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.invalid_provider">
+            <summary>
+            Invalid ddns provider name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionErrors.invalid_next_hop">
+            <summary>
+            Invalid next hop address (should be a link local address).
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStates">
+            <summary>
+            ConnectionStates
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStates.going_up">
+            <summary>
+            Connection is initializing.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStates.up">
+            <summary>
+            Connection is active.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStates.going_down">
+            <summary>
+            Connection is about to become inactive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStates.down">
+            <summary>
+            Connection is inactive.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus">
+            <summary>
+            ConnectionStatus
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.ConnectionState">
+            <summary>
+            ConnectionState
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.ConnectionType">
+            <summary>
+            ConnectionType
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.Media">
+            <summary>
+            MediaType
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.IPv4">
+            <summary>
+            Freebox IPv4 address.       
+            </summary>
+            <remarks>
+            This field is only available when connection state is up.
+            </remarks>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.IPv6">
+            <summary>
+            Freebox IPv6.
+            </summary>
+            <remarks>
+            This field is only available when connection state is up.
+            </remarks>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.RateUp">
+            <summary>
+            Current upload rate in byte/s.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.RateDown">
+            <summary>
+            Current download rate in byte/s.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.BandwidthUp">
+            <summary>
+            Available upload bandwidth in bit/s.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.BandwidthDown">
+            <summary>
+            Available download bandwidth in bit/s.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.BytesUp">
+            <summary>
+            Total uploaded bytes since last connection.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.BytesDown">
+            <summary>
+            Total downloaded bytes since last connection.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus.IPv4PortRange">
+            <summary>
+            Some customers share the same IPv4 and each customer is then assigned a port range.
+            The first value is the first port of the assigned range and the second value is the
+            last port (inclusive).
+            All PortForwardingConfig must use ports in this range to be effective.
+            </summary>        
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionTypes">
+            <summary>
+            ConnectionTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionTypes.ethernet">
+            <summary>
+            FTTH
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionTypes.rfc2684">
+            <summary>
+            xDSL (unbundled)
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionTypes.pppoatm">
+            <summary>
+            xDSL
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.Media">
+            <summary>
+            Media
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.Media.ftth">
+            <summary>
+            FTTH
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.ConnectionAPI.Media.xdsl">
+            <summary>
+            xDSL
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.FreeplugAPI.EthernetPortStatus">
+            <summary>
+            EthernetPortStatus
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.EthernetPortStatus.up">
+            <summary>
+            The ethernet port is up.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.EthernetPortStatus.down">
+            <summary>
+            The ethernet port is down.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.EthernetPortStatus.unknown">
+            <summary>
+            The ethernet port state is unknown.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug">
+            <summary>
+            Freeplug
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.ID">
+            <summary>
+            Freeplug unique ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.Local">
+            <summary>
+            If true the Freeplug is connected directly to the Freebox.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.NetRole">
+            <summary>
+            Freeplug network role.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.Model">
+            <summary>
+            Freebox Server netbios name.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.EthernetFullDuplex">
+            <summary>
+            Ethernet link is full duplex.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.HasNetwork">
+            <summary>
+            Is connected to the network.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.EthernetSpeed">
+            <summary>
+            Ethernet port speed.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.Inactive">
+            <summary>
+            Seconds since last activity.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.NetworkID">
+            <summary>
+            Network ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.RXRate">
+            <summary>
+            RX rate (from the freeplugs to the 'cco' freeplug) (in Mb/s), -1 if not available.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.Freeplug.TXRate">
+            <summary>
+            TX rate (from the 'cco' freeplug to the freeplugs) (in Mb/s), -1 if not available.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugErrors">
+            <summary>
+            FreeplugErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugErrors.inval">
+            <summary>
+            Invalid request.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugErrors.nomem">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugErrors.nosta">
+            <summary>
+            No freeplug with this id.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugErrors.nopeer">
+            <summary>
+            No freeplug with this id.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugNetwork">
+            <summary>
+            FreeplugNetwork
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugNetwork.ID">
+            <summary>
+            Network unique ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.FreeplugAPI.FreeplugNetwork.Members">
+            <summary>
+            List of freeplugs member of this network.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.FreeplugAPI.NetRoles">
+            <summary>
+            NetRoles
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.NetRoles.sta">
+            <summary>
+            Freeplug Station.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.NetRoles.pco">
+            <summary>
+            Freeplug proxy coordinator.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.FreeplugAPI.NetRoles.cco">
+            <summary>
+            Central coordinator.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.LCD.Lcd">
+            <summary>
+            Lcd
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ConfigurationAPI.LCD.Lcd.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ConfigurationAPI.LCD.Lcd.GetLcdConfig">
+            <summary>
+            Get LcdConfig.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig">
+            <summary>
+            LcdConfig
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig.#ctor(System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="brightness"></param>
+            <param name="orientationForced"></param>
+            <param name="orientation"></param>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig.Brightness">
+            <summary>
+            The screen brightness (range from 0 to 100).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig.OrientationForced">
+            <summary>
+            Is the screen orientation forced.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.LCD.LcdConfig.Orientation">
+            <summary>
+            The screen orientation angle.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.LCD.LcdErrors">
+            <summary>
+            LcdErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.LCD.LcdErrors.inval">
+            <summary>
+            Invalid parameters.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.LCD.LcdErrors.no_panel">
+            <summary>
+            No screen detected.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.LCD.LcdErrors.setup">
+            <summary>
+            Unable to setup screen.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig">
+            <summary>
+            AFPConfig
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig.Enabled">
+            <summary>
+            Is AFP service enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig.GuestAllow">
+            <summary>
+            /Allow guest to access shared files.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig.ServerType">
+            <summary>
+            AFP server type (to display proper icon) in MacOS.
+            </summary>
+            <see cref="T:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType"/>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig.LoginName">
+            <summary>
+            AFP user name.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPConfig.LoginPassword">
+            <summary>
+            AFP user password.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType">
+            <summary>
+            AFPServerType
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.powerbook">
+            <summary>
+            Powerbook
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.powermac">
+            <summary>
+            Powermac
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.macmini">
+            <summary>
+            Macmini
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.imac">
+            <summary>
+            Imac
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.macbook">
+            <summary>
+            Macbook
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.macbookpro">
+            <summary>
+            Macbook pro
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.macbookair">
+            <summary>
+            Macbook air
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.macpro">
+            <summary>
+            Mac pro
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.appletv">
+            <summary>
+            AppleTV
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.airport">
+            <summary>
+            Airport
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.AFPServerType.xserve">
+            <summary>
+            XServe
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors">
+            <summary>
+            NetworkShareErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors.invalid_workgroup_name">
+            <summary>
+            Invalid workgroup name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors.invalid_logon_user">
+            <summary>
+            Invalid samba user name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors.invalid_logon_password">
+            <summary>
+            Invalid samba user password.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors.invalid_afp_login_name">
+            <summary>
+            Invalid AFP user name.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.NetworkShareErrors.invalid_afp_login_password">
+            <summary>
+            Invalid AFP user password.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig">
+            <summary>
+            SambaConfig
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.FileShareEnabled">
+            <summary>
+            Is file sharing enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.PrintShareEnabled">
+            <summary>
+            Is printer sharing enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.LogonEnabled">
+            <summary>
+            Is login/password required to access shares.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.LogonUser">
+            <summary>
+            Samba user name.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.LogonPassword">
+            <summary>
+            Samba user password.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.NetworkShareAPI.SambaConfig.Workgroup">
+            <summary>
+            Name of the workgroup.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.UPnPAV.UPnPAVConfig">
+            <summary>
+            UPnPAVConfig
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ConfigurationAPI.UPnPAV.UPnPAVConfig.Enabled">
+            <summary>
+            Is the UPnP AV service enabled.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ConfigurationAPI.UPnPAV.UPnPAVErrors">
+            <summary>
+            UPnPAVErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ConfigurationAPI.UPnPAV.UPnPAVErrors.internal_error">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactAddress">
+            <summary>
+            ContactAddress
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ContactAPI.ContactAddress.#ctor(System.Int32,System.Int32,FreeboxAPI.ContactAPI.EmailTypes,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="id"></param>
+            <param name="contactID"></param>
+            <param name="addressType"></param>
+            <param name="number"></param>
+            <param name="street"></param>
+            <param name="city"></param>
+            <param name="zipcode"></param>
+            <param name="country"></param>
+            <param name="street2"></param>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.ID">
+            <summary>
+            Address ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.ContactID">
+            <summary>
+            ID of the related contact.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.AddressType">
+            <summary>
+            Type of address.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.Number">
+            <summary>
+            Contact number.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.Street">
+            <summary>
+            Street
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.Street2">
+            <summary>
+            Street2
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.ZipCode">
+            <summary>
+            ZipCode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactAddress.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactEmail">
+            <summary>
+            ContactEmail
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ContactAPI.ContactEmail.#ctor(System.Int32,System.Int32,FreeboxAPI.ContactAPI.EmailTypes,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="id"></param>
+            <param name="contactID"></param>
+            <param name="emailType"></param>
+            <param name="email"></param>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEmail.ID">
+            <summary>
+            Address ID.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEmail.ContactID">
+            <summary>
+            ID of the related contact.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEmail.EmailType">
+            <summary>
+            Type of address.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEmail.Email">
+            <summary>
+            Email address.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactEntry">
+            <summary>
+            ContactEntry
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ContactAPI.ContactEntry.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,FreeboxAPI.ContactAPI.ContactAddress[],FreeboxAPI.ContactAPI.ContactEmail[],FreeboxAPI.ContactAPI.ContactNumber[],FreeboxAPI.ContactAPI.ContactURL[])">
+            <summary>
+            Parameters constructor
+            </summary>
+            <param name="id"></param>
+            <param name="displayName"></param>
+            <param name="firstName"></param>
+            <param name="lastName"></param>
+            <param name="company"></param>
+            <param name="photoUrl"></param>
+            <param name="lastUpdate"></param>
+            <param name="notes"></param>
+            <param name="addresses"></param>
+            <param name="emails"></param>
+            <param name="numbers"></param>
+            <param name="urls"></param>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.DisplayName">
+            <summary>
+            DisplayName
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.FirstName">
+            <summary>
+            FirstName
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.LastName">
+            <summary>
+            LastName
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.Company">
+            <summary>
+            Company
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.PhotoURL">
+            <summary>
+            PhotoURL
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.LastUpdate">
+            <summary>
+            LastUpdate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.Notes">
+            <summary>
+            Notes
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.Addresses">
+            <summary>
+            Addresses
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.Emails">
+            <summary>
+            Emails
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.Numbers">
+            <summary>
+            Numbers
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactEntry.URLs">
+            <summary>
+            URLs
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.ContactErrors.noent">
+            <summary>
+            No entry with this id.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.ContactErrors.exists">
+            <summary>
+            An entry already exists.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.ContactErrors.no_match">
+            <summary>
+            No entry matched your request.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactInfo">
+            <summary>
+            ContactInfo
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactInfo.Numbers">
+            <summary>
+            Contact number(s).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactInfo.Addresses">
+            <summary>
+            Contact addresse(s).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactInfo.URLs">
+            <summary>
+            Contact url(s).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactInfo.Emails">
+            <summary>
+            Contact email(s).
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactNumber">
+            <summary>
+            ContactNumber
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ContactAPI.ContactNumber.#ctor(System.Int32,System.Int32,FreeboxAPI.ContactAPI.NumberTypes,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="id"></param>
+            <param name="contactID"></param>
+            <param name="numberType"></param>
+            <param name="number"></param>
+            <param name="isDefault"></param>
+            <param name="isOwn"></param>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactNumber.ID">
+            <summary>
+            Address ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactNumber.ContactID">
+            <summary>
+            ID of the related contact.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactNumber.NumberType">
+            <summary>
+            Type of number.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactNumber.IsDefault">
+            <summary>
+            Is this number the preferred contact phone number.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactNumber.IsOwn">
+            <summary>
+            Is this number the Freebox owner number.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.ContactURL">
+            <summary>
+            ContactURL
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.ContactAPI.ContactURL.#ctor(System.Int32,System.Int32,FreeboxAPI.ContactAPI.URLTypes,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="id"></param>
+            <param name="contactID"></param>
+            <param name="urlType"></param>
+            <param name="url"></param>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactURL.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactURL.ContactID">
+            <summary>
+            ContactID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactURL.URLType">
+            <summary>
+            URLType
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ContactAPI.ContactURL.URL">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.EmailTypes">
+            <summary>
+            EmailTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.EmailTypes.home">
+            <summary>
+            Home address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.EmailTypes.work">
+            <summary>
+            Work address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.EmailTypes.other">
+            <summary>
+            Other.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.NumberTypes">
+            <summary>
+            NumberTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.NumberTypes.fixed">
+            <summary>
+            Fixed phone.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.NumberTypes.mobile">
+            <summary>
+            Mobile phone.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.NumberTypes.work">
+            <summary>
+            Work.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.NumberTypes.fax">
+            <summary>
+            Fax.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.NumberTypes.other">
+            <summary>
+            Other
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ContactAPI.URLTypes">
+            <summary>
+            URLTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.URLTypes.profile">
+            <summary>
+            Profile address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.URLTypes.blog">
+            <summary>
+            Blog address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.URLTypes.site">
+            <summary>
+            Website address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ContactAPI.URLTypes.other">
+            <summary>
+            Other
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.Download">
+            <summary>
+            Download
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.DownloadType">
+            <summary>
+            DownloadType
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.Size">
+            <summary>
+            Size
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.QueuePos">
+            <summary>
+            QueuePos
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.IOPriority">
+            <summary>
+            IOPriority
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.TXBytes">
+            <summary>
+            TXBytes
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.RXBytes">
+            <summary>
+            RXBytes
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.TXRate">
+            <summary>
+            TXRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.RXRate">
+            <summary>
+            RXRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.TXPct">
+            <summary>
+            TXPct
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.RXPct">
+            <summary>
+            RXPct
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.Error">
+            <summary>
+            DownloadTaskError
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.CreatedTS">
+            <summary>
+            CreatedTS
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.DownloadDir">
+            <summary>
+            DownloadDir
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.StopRatio">
+            <summary>
+            StopRatio
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.ArchivePassword">
+            <summary>
+            ArchivePassword
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.InfoHash">
+            <summary>
+            InfoHash
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.Download.PieceLength">
+            <summary>
+            PieceLength
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadErrors">
+            <summary>
+            DownloadErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.task_not_found">
+            <summary>
+            No task was found with the given id.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_operation">
+            <summary>
+            Attempt to perform an invalid operation.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_file">
+            <summary>
+            Error with the download file (invalid format?).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_url">
+            <summary>
+            URL is invalid.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.not_implemented">
+            <summary>
+            Method not implemented.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.out_of_memory">
+            <summary>
+            No more memory available to perform the requested action.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_task_type">
+            <summary>
+            The task type is invalid.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.hibernating">
+            <summary>
+            The downloader is hibernating.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.need_bt_stopped_done">
+            <summary>
+            This action is only valid for Bittorrent task in stopped or done state.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.bt_tracker_not_found">
+            <summary>
+            Attempt to access an invalid tracker object.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.too_many_tasks">
+            <summary>
+            Too many tasks.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_address">
+            <summary>
+            Invalid peer address.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.port_conflict">
+            <summary>
+            Port conflict when setting config.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.invalid_priority">
+            <summary>
+            Invalid priority.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.internal_error">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.ctx_file_error">
+            <summary>
+            Failed to initialize task context file (need to check disk).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.exists">
+            <summary>
+            Same task already exists.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadErrors.port_outside_range">
+            <summary>
+            Incoming port is not available for this customer
+            </summary>
+            <see cref="T:FreeboxAPI.ConfigurationAPI.ConnectionAPI.ConnectionStatus"/>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DhtStats.Enabled">
+            <summary>
+            Is the dht enabled.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DhtStats.NodeCount">
+            <summary>
+            Number of active nodes.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DhtStats.EnabledIPv6">
+            <summary>
+            Is the dht enabled on IPv6
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DhtStats.NodeCountIPv6">
+            <summary>
+            Number of active nodes on IPv6.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlRate">
+            <summary>
+            DlRate
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlRate.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlRate.TXRate">
+            <summary>
+            TXRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlThrottlingConfig.Normal">
+            <summary>
+            Download rate for normal time slot (in B/s).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlThrottlingConfig.Slow">
+            <summary>
+            Download rate for normal slow slot (in B/s).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DlThrottlingConfig.Schedule">
+            <summary>
+            The schedule array represent the list of week hours timeslot, starting on monday
+            at midnight. Therefore the complete week is represented in a array of 168 elements (24 * 7).
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats">
+            <summary>
+            DownloadStats
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasks">
+            <summary>
+            NbTasks
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksStopped">
+            <summary>
+            NbTasksStopped
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksChecking">
+            <summary>
+            NbTasksChecking
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksQueued">
+            <summary>
+            NbTasksQueued
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksExtracting">
+            <summary>
+            NbTasksExtracting
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksDone">
+            <summary>
+            NbTasksDone
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksRepairing">
+            <summary>
+            NbTasksRepairing
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksSeeding">
+            <summary>
+            NbTasksSeeding
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksDownloading">
+            <summary>
+            NbTasksDownloading
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksError">
+            <summary>
+            NbTasksError
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksStopping">
+            <summary>
+            NbTasksStopping
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbTasksActive">
+            <summary>
+            NbTaksActive
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbRss">
+            <summary>
+            NbRSS
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbRssItemsUnread">
+            <summary>
+            NbRSSItemsUnread
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.RXRate">
+            <summary>
+            RXRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.TXRate">
+            <summary>
+            TXRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.ThrottlingMode">
+            <summary>
+            ThrottlingMode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.IsThrottlingScheduled">
+            <summary>
+            IsThrottlingScheduled
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.ThrottlingRate">
+            <summary>
+            ThrottlingRate
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NzbConfigStatus">
+            <summary>
+            NzbConfigStatus
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.ConnectionReady">
+            <summary>
+            ConnectionReady
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.NbPeer">
+            <summary>
+            NbPeer
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.BlocklistEntries">
+            <summary>
+            BlocklistEntries
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.BlocklistHits">
+            <summary>
+            BlocklistHits
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.DownloadStats.DhtStats">
+            <summary>
+            DhtStats
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Errors">
+            <summary>
+            Errors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Errors.none">
+            <summary>
+            Test is ok.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Errors.nzb_authentication_required">
+            <summary>
+            Authentication is required.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Errors.bad_authentication">
+            <summary>
+            Incorrect credentials.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Errors.connection_refused">
+            <summary>
+            Unable to connect to NNTP server.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Mode">
+            <summary>
+            Mode
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Mode.normal">
+            <summary>
+            Force use of normal rate limits (not using the scheduler).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Mode.slow">
+            <summary>
+            Force use of slow rate limits (not using the scheduler).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Mode.hibernate">
+            <summary>
+            Force hibernate (not using the scheduler).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Mode.schedule">
+            <summary>
+            Use scheduded rate limit.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadStatsAPI.NzbConfigStatus">
+            <summary>
+            NzbConfigStatus
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.DownloadAPI.DownloadStatsAPI.NzbConfigStatus.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.NzbConfigStatus.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.DownloadAPI.DownloadStatsAPI.NzbConfigStatus.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Schedule.normal">
+            <summary>
+            Downloads will use normal DlRate config for this timeslot.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Schedule.slow">
+            <summary>
+            Downloads will use slow DlRate config for this timeslot.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Schedule.hibernate">
+            <summary>
+            Downloads will be paused for this timeslot.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Status.not_checked">
+            <summary>
+            Config has not been checked yet.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Status.checking">
+            <summary>
+            Test in progress.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Status.error">
+            <summary>
+            Config is invalid, see error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatsAPI.Status.ok">
+            <summary>
+            Config is ok.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.stopped">
+            <summary>
+            Task is stopped, can be resumed by setting the status to downloading.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.queued">
+            <summary>
+            Task will start when a new download slot is available the queue
+            position is stored in QueuePos attribute.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.starting">
+            <summary>
+            Task is preparing to start download.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.stopping">
+            <summary>
+            Task is gracefully stopping.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.error">
+            <summary>
+            There was a problem with the download, you can get an error code
+            in the error field.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.done">
+            <summary>
+            The download is over. For bt you can resume seeding setting the status
+            to seeding if the ratio is not reached yet.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.checking">
+            <summary>
+            (only valid for nzb) download is over, the downloaded files are being checked using par2.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.repairing">
+            <summary>
+            (only valid for nzb) download is over, the downloaded files are being repaired using par2.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.extracting">
+            <summary>
+            (only valid for nzb) download is over, the downloaded files are being extracted.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.seeding">
+            <summary>
+            (only valid for bt) download is over, the content is changed to being shared to other users.
+            The task will automatically stop once the seed ratio has been reached.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadStatus.retry">
+            <summary>
+            You can set a task status to 'retry' to restart the download task.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.DownloadAPI.DownloadTaskErrors">
+            <summary>
+            DownloadTaskErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.none">
+            <summary>
+            No error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.internal">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.disk_full">
+            <summary>
+            The disk is full.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.unknown">
+            <summary>
+            Unknown error
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.parse_error">
+            <summary>
+            Parse error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_301">
+            <summary>
+            HTTP 301 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_400">
+            <summary>
+            HTTP 400 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_401">
+            <summary>
+            HTTP 401 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_402">
+            <summary>
+            HTTP 402 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_403">
+            <summary>
+            HTTP 403 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_404">
+            <summary>
+            HTTP 404 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_405">
+            <summary>
+            HTTP 405 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_406">
+            <summary>
+            HTTP 406 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_407">
+            <summary>
+            HTTP 407 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_408">
+            <summary>
+            HTTP 408 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_409">
+            <summary>
+            HTTP 409 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_410">
+            <summary>
+            HTTP 410 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_411">
+            <summary>
+            HTTP 411 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_412">
+            <summary>
+            HTTP 412 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_413">
+            <summary>
+            HTTP 413 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_414">
+            <summary>
+            HTTP 414 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_415">
+            <summary>
+            HTTP 415 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_416">
+            <summary>
+            HTTP 416 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_417">
+            <summary>
+            HTTP 417 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_422">
+            <summary>
+            HTTP 422 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_423">
+            <summary>
+            HTTP 423 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_424">
+            <summary>
+            HTTP 424 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_425">
+            <summary>
+            HTTP 425 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_426">
+            <summary>
+            HTTP 426 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_427">
+            <summary>
+            HTTP 427 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_428">
+            <summary>
+            HTTP 428 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_429">
+            <summary>
+            HTTP 429 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_430">
+            <summary>
+            HTTP 430 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_431">
+            <summary>
+            HTTP 431 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_4xx">
+            <summary>
+            Other 4xx HTTP errors.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_500">
+            <summary>
+            HTTP 500 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_501">
+            <summary>
+            HTTP 501 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_502">
+            <summary>
+            HTTP 502 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_503">
+            <summary>
+            HTTP 503 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_504">
+            <summary>
+            HTTP 504 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_505">
+            <summary>
+            HTTP 505 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_506">
+            <summary>
+            HTTP 506 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_507">
+            <summary>
+            HTTP 507 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_508">
+            <summary>
+            HTTP 508 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_509">
+            <summary>
+            HTTP 509 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_510">
+            <summary>
+            HTTP 510 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_511">
+            <summary>
+            HTTP 511 error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_5xx">
+            <summary>
+            Other 5xx HTTP errors.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.http_redirections_exceeded">
+            <summary>
+            Too many HTTP redirections.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_no_group">
+            <summary>
+            Cannot find the requested group on server.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_not_found">
+            <summary>
+            Article not found on the server.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_invalid_crc">
+            <summary>
+            Invalid article CRC.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_invalid_size">
+            <summary>
+            Invalid article size.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_invalid_filename">
+            <summary>
+            Invalid filename.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_open_failed">
+            <summary>
+            Error opening.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_write_failed">
+            <summary>
+            Error writing.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_missing_size">
+            <summary>
+            Missing article size.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_decode_error">
+            <summary>
+            Article decoding error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_missing_segments">
+            <summary>
+            Missing article segments.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_error">
+            <summary>
+            Other nzb error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.unknown_host">
+            <summary>
+            Unknown host.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.timeout">
+            <summary>
+            Timeout.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.bad_authentication">
+            <summary>
+            Invalid credentials.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.connection_refused">
+            <summary>
+            Remote host refused connection.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.nzb_authentication_required">
+            <summary>
+            Nzb server need authentication.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.bt_tracker_error">
+            <summary>
+            Unable to announce on tracker.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.bt_missing_files">
+            <summary>
+            Missing torrent files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.bt_file_error">
+            <summary>
+            Error accessing torrent files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTaskErrors.missing_ctx_file">
+            <summary>
+            Error accessing task context file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTypes.bt">
+            <summary>
+            Bittorrent download.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTypes.nzb">
+            <summary>
+            Newsgroup download.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTypes.http">
+            <summary>
+            HTTP download.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.DownloadTypes.ftp">
+            <summary>
+            FTP download.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.IOPriority.low">
+            <summary>
+            Low
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.IOPriority.normal">
+            <summary>
+            Normal
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.DownloadAPI.IOPriority.high">
+            <summary>
+            High
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.Freebox">
+            <summary>
+            Freebox
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.#ctor(System.String,System.String)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.RequestAuth(FreeboxAPI.LoginAPI.TokenRequest)">
+            <summary>
+            Request auth function.
+            </summary>
+            <param name="tokenRequest">Application information.</param>
+            <returns>Returns whether the request is granted.</returns>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.GetAuthStatus(System.Int32)">
+            <summary>
+            Get athentication status.
+            </summary>
+            <param name="trackID">The app trackID</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.GetChallenge">
+            <summary>
+            Get the challenge string.
+            </summary>
+            <returns>Challenge string</returns>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.OpenSession">
+            <summary>
+            Open a session.
+            </summary>
+            <returns>Returns a <c>Dictionary</c> corresponding to the app permissions.</returns>
+            <see cref="T:FreeboxAPI.API.AppPermission"/>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.AuthenticatedCall(System.String)">
+            <summary>
+            Make an authenticated call to the API.
+            </summary>
+            <param name="sessionToken">The session token</param>
+            <returns>return true if success. False otherwise.</returns>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.CloseSession">
+            <summary>
+            Close the current session.
+            </summary>
+            <returns>return true if the session has been close. False otherwise.</returns>
+        </member>
+        <member name="M:FreeboxAPI.Freebox.GetIsLoggedIn">
+            <summary>
+            Get logged_in value.
+            </summary>
+            <returns>True if the user is connected. False otherwise.</returns>
+            <remarks>
+            This function use the <c>APIEndpoints.LoginEndpoints.GetChallengeValue</c>.
+            </remarks>
+        </member>
+        <member name="P:FreeboxAPI.Freebox.Username">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.Freebox.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.Freebox.IsLoggedIn">
+            <summary>
+            Is the user already connected
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.ConflictModes">
+            <summary>
+            ConflictModes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.ConflictModes.overwrite">
+            <summary>
+            Overwrite the destination file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.ConflictModes.both">
+            <summary>
+            Keep both files (rename the file adding a suffix).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.ConflictModes.recent">
+            <summary>
+            Only overwrite if newer than destination file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.ConflictModes.skip">
+            <summary>
+            Keep the destination file.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FileTypes">
+            <summary>
+            FileTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FileTypes.dir">
+            <summary>
+            Directory
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FileTypes.file">
+            <summary>
+            Regular file
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSErrors">
+            <summary>
+            FSErrors
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.invalid_id">
+            <summary>
+            Invalid object ID.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.path_not_found">
+            <summary>
+            File or folder not found.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.internal_error">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.disk_unavailable">
+            <summary>
+            The disk is not mounted.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.invalid_request">
+            <summary>
+            Invalid request.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.invalid_conflict_mode">
+            <summary>
+            The conflict mode specified is invalid (see below).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.exec_failed">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.out_of_memory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.task_not_found">
+            <summary>
+            Invalid task ID.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.invalid_state">
+            <summary>
+            You tried to set an invalid state.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.invalid_task_type">
+            <summary>
+            This operation cannot be performed on this task.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.destination_conflict">
+            <summary>
+            The destination file/folder already exists.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.access_denied">
+            <summary>
+            Access to this file is denied.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrors.disk_full">
+            <summary>
+            The destination disk is full.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSErrorsPlus">
+            <summary>
+            FSErrorPlus
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.none">
+            <summary>
+            No error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.archive_read_failed">
+            <summary>
+            Error reading archive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.archive_open_failed">
+            <summary>
+            Error opening archive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.archive_write_failed">
+            <summary>
+            Error writing archive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.chdir_failed">
+            <summary>
+            Error changing directory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.dest_is_not_dir">
+            <summary>
+            The destination is not a directory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.file_exists">
+            <summary>
+            File already exists.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.file_not_found">
+            <summary>
+            File not found.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.mkdir_failed">
+            <summary>
+            Unable to create directory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.open_input_failed">
+            <summary>
+            Error opening input file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.open_output_failed">
+            <summary>
+            Error opening output file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.opendir_failed">
+            <summary>
+            Error opening directory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.openwrite_failed">
+            <summary>
+            Error overwriting file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.path_too_big">
+            <summary>
+            Path is too long.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.repair_failed">
+            <summary>
+            Failed to repair corrupted files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.mdir_failed">
+            <summary>
+            Error removing directory.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.same_file">
+            <summary>
+            Source and Destination are the same file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.unlink_failed">
+            <summary>
+            Error removing file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.unsupported_file_type">
+            <summary>
+            This file type is not supported.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.write_failed">
+            <summary>
+            Error writing file.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.disk_full">
+            <summary>
+            Disk is full.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.internal">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.invalid_format">
+            <summary>
+            Invalid file format (corrupted?).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.incorrect_password">
+            <summary>
+            Invalid or missing password for extraction.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.permission_denied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.readlink_failed">
+            <summary>
+            Failed to read the target of a symbolic link.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSErrorsPlus.symlink_failed">
+            <summary>
+            Failed to create a symbolic link.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSFileInfo">
+            <summary>
+            FSFileInfo
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Path">
+            <summary>
+            File path (encoded in base64).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Name">
+            <summary>
+            File name (in clear text).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Mimetype">
+            <summary>
+            File mimetype.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.FileType">
+            <summary>
+            FileType.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Size">
+            <summary>
+            File size in bytes.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Modification">
+            <summary>
+            File modification timestamp.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Index">
+            <summary>
+            Display order for natural sort.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Link">
+            <summary>
+            Is this file a link.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Target">
+            <summary>
+            Symlink target path (encoded in base64) (only present when link is set to true).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.Hidden">
+            <summary>
+            Should the file be hidden to user.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.FolderCount">
+            <summary>
+            Number of subfolders. Only relevant for dir, only provided if "countDubFolder" parameter is set.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSFileInfo.FileCount">
+            <summary>
+            Number of files inside directory. Only relevant for dir, only provided if "countSubFolder" parameter is set.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSTask">
+            <summary>
+            FSTask
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.FSTaskType">
+            <summary>
+            TaskType
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.FSTaskState">
+            <summary>
+            TaskState
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.CreatedTS">
+            <summary>
+            CreatedTS
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.StartedTS">
+            <summary>
+            StartedTS
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.DoneTS">
+            <summary>
+            DoneTS
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.Duration">
+            <summary>
+            Task duration in seconds.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.Progress">
+            <summary>
+            Task progress in percent (scaled by 100).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.ETA">
+            <summary>
+            Estimated time remaining before the task completion (in seconds).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.From">
+            <summary>
+            Current source file (if available).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.To">
+            <summary>
+            Current destination file (if available).
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.NbFiles">
+            <summary>
+            Number of files to process.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.NbFilesDone">
+            <summary>
+            Number of files processed.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.TotalBytes">
+            <summary>
+            Total bytes to process.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.TotalBytesDone">
+            <summary>
+            Number of bytes processed.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.CurrentBytes">
+            <summary>
+            Size of the file currently processed.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.CurrentBytesDone">
+            <summary>
+            Number of bytes processed for the current file.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.FSAPI.FSTask.Rate">
+            <summary>
+            Processing rate in byte/s.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSTaskStates">
+            <summary>
+            FSTaskStates
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskStates.queued">
+            <summary>
+            Queued (only one task is active at a given time).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskStates.running">
+            <summary>
+            Running.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskStates.paused">
+            <summary>
+            Pause (user suspended).
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskStates.done">
+            <summary>
+            Done.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskStates.failed">
+            <summary>
+            Failed (see error).
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.FSAPI.FSTaskTypes">
+            <summary>
+            FSTaskTypes
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.cat">
+            <summary>
+            Concatenate multiple files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.cp">
+            <summary>
+            Copy files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.mv">
+            <summary>
+            Move files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.rm">
+            <summary>
+            Remove files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.archive">
+            <summary>
+            Creates an archive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.extract">
+            <summary>
+            Extract an archive.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.FSAPI.FSTaskTypes.repair">
+            <summary>
+            Check and repair files.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.LoginAPI.AuthStatus.unknown">
+            <summary>
+            The app_token is invalid or has been revoked.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.LoginAPI.AuthStatus.pending">
+            <summary>
+            The user has not confirmed the authorization request yet.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.LoginAPI.AuthStatus.timeout">
+            <summary>
+            The user did not confirmed the authorization within the given time.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.LoginAPI.AuthStatus.granted">
+            <summary>
+            The app_token is valid and can be used to open a session.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.LoginAPI.AuthStatus.denied">
+            <summary>
+            The user denied the authorization request.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.LoginAPI.TokenRequest">
+            <summary>
+            TokenRequest
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.LoginAPI.TokenRequest.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Parameters constructor.
+            </summary>
+            <param name="appID"></param>
+            <param name="appName"></param>
+            <param name="appVersion"></param>
+            <param name="deviceName"></param>
+        </member>
+        <member name="M:FreeboxAPI.LoginAPI.TokenRequest.RequestAuth">
+            <summary>
+            Request authorization
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.LoginAPI.TokenRequest.AppID">
+            <summary>
+            AppID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.LoginAPI.TokenRequest.AppName">
+            <summary>
+            AppName
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.LoginAPI.TokenRequest.AppVersion">
+            <summary>
+            AppVersion
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.LoginAPI.TokenRequest.DeviceName">
+            <summary>
+            DeviceName
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.AccessPolicies.allowed">
+            <summary>
+            Access is allowed.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.AccessPolicies.denied">
+            <summary>
+            Access is denied.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.AccessPolicies.webonly">
+            <summary>
+            Access is granted only for HTTP and HTTPS trafic.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.ParentalControlErrors.inval">
+            <summary>
+            Invalid request.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.ParentalControlErrors.exist">
+            <summary>
+            A rule already exists for this host.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.ParentalControlErrors.noent">
+            <summary>
+            Invalid rule id.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ParentalControlAPI.ParentalFilter">
+            <summary>
+            ParentalFilter
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.Macs">
+            <summary>
+            Macs
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.Hosts">
+            <summary>
+            Hosts
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.Desc">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.Forced">
+            <summary>
+            Forced
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.ForcedMode">
+            <summary>
+            ForcedMode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.TmpModeExpire">
+            <summary>
+            TmpModeExpire
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.TmpMode">
+            <summary>
+            TmpMode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.SchedulingMode">
+            <summary>
+            SchedulingMode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.FilterState">
+            <summary>
+            FilterState
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.CurrentMappingIndex">
+            <summary>
+            CurrentMappingIndex
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilter.NextChange">
+            <summary>
+            NextChange
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.ParentalControlAPI.ParentalFilterConfig">
+            <summary>
+            ParentalFilterConfig
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterConfig.DefaultFilterMode">
+            <summary>
+            DefaultFilterMode
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.Resolution">
+            <summary>
+            Planning resolution: number of planning slots per day
+            e.g. 48 means that each slot represent 30 minutes.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.CDayRanges">
+            <summary>
+            List of custom day range, each custom day range represents a group of days for which
+            you want to use a different planning than other week days.
+            For instance a custom day range can contain the list of you children holidays
+            
+            :fr_bank_holidays: French bank holidays
+            :fr_school_holidays_a: French school holidays - Zone A
+            :fr_school_holidays_b: French school holidays - Zone B
+            :fr_school_holidays_c: French school holidays - Zone C
+            :fr_school_holidays_corse: French school holidays - Corse
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.Mapping">
+            <summary>
+            Array of states for each corresponding planning slots.
+            The array size is: (number of CDaysRanges + 7) * Resolution
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.fr_bank_holidays">
+            <summary>
+            French bank holidays.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.fr_school_holidays_a">
+            <summary>
+            French school holidays - Zone A.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.fr_school_holidays_b">
+            <summary>
+            French school holidays - Zone B.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.ParentalControlAPI.ParentalFilterPlanning.fr_school_holidays_c">
+            <summary>
+            French school holidays - Zone C
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.SchedulingMode.forced">
+            <summary>
+            FilterState is forced to ForcedMode.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.SchedulingMode.temporary">
+            <summary>
+            FilterState is temporary set to TmpMode for the next TmpModeExpireSeconds.
+            </summary>
+        </member>
+        <member name="F:FreeboxAPI.ParentalControlAPI.SchedulingMode.planning">
+            <summary>
+            FilterState is set using the planning.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketNotification.Action">
+            <summary>
+            The action will have the value 'notification'
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketNotification.Success">
+            <summary>
+            True if success.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketNotification.Source">
+            <summary>
+            The name of the source of the notification.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketNotification.Event">
+            <summary>
+            The name of event that generated the notification.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketNotification.Result">
+            <summary>
+            The content of the notification.
+            (It may be omitted if no datz has to be transferred along with the
+            notification)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketRequest.RequestID">
+            <summary>
+            If you specify a RequestID in your request, it will be added in the corresponding
+            reply, so that you can correlate responses to the request.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketRequest.Action">
+            <summary>
+            The request 'Action'.
+            </summary>
+        </member>
+        <member name="T:FreeboxAPI.WebSocketAPI.WebSocketResponse">
+            <summary>
+            WebStocketResponse
+            </summary>
+        </member>
+        <member name="M:FreeboxAPI.WebSocketAPI.WebSocketResponse.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.RequestID">
+            <summary>
+            If you set a RequestID in your WebSocketRequest, the same RequestID will be returned
+            in the associated response.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.Action">
+            <summary>
+            The action specified in the associated WebSocketRequest.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.Success">
+            <summary>
+            Indicates if the request was successful.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.Result">
+            <summary>
+            The result of the request.
+            (It may be omitted if the request does not expect any result)
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.ErrorCode">
+            <summary>
+            In case of request error, this ErrorCode provides information about the error.
+            </summary>
+        </member>
+        <member name="P:FreeboxAPI.WebSocketAPI.WebSocketResponse.Msg">
+            <summary>
+            In case of error, provides a French error message relative to the error.
+            </summary>
+        </member>
+    </members>
+</doc>
